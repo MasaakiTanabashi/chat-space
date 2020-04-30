@@ -43,10 +43,8 @@
     background-color: #2f3e51;
   }
     .group-list{
-      // height: 90px;
       width: 260px;
       margin: 0 20px;
-      // background-color: #eeeeee;
       color: #ffffff;
       font-weight: bold;
       &__name{
@@ -69,11 +67,33 @@
     height: 100px;
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
-    // display: flex;
-    // justify-content: space-between;
-    // &__name{
-    //   margin-left: 40px;
-    // }
+    display: flex;
+    justify-content: space-between;
+    &__name{
+      margin-left: 40px;
+        .name{
+          font-size: 20px;
+          color: #333333;
+          padding-top: 35px;
+          margin-bottom: 15px;
+        }
+        .member{
+          font-size: 12px;
+          color: #999999;
+        }
+    }
+    &__edit-btn{
+      width: 72px;
+      margin-top: 28px;
+      margin-right: 40px;
+      margin-bottom: calc(100px - 28px - 40px);
+      line-height: 40px;
+      font-size: 16px;
+      color: #38aef0;
+      border: solid 1px;
+      text-align: center;
+      text-decoration: none;
+    }
   }
   &__message-list{
     height: calc(100vh - 100px - 90px);
