@@ -1,10 +1,13 @@
 .chat-main
-  .chat-main__groupInfo
-    .chat-main__groupInfo__name
-      .name test
-      .member Member : masa
-    = link_to "#", class: "chat-main__groupInfo__editBtn" do
+  .groupInfo
+    .groupInfo__group
+      .groupInfo__groupName test
+      %ul.groupInfo__memberList
+        Member ：
+        %li.groupInfo__member masa
+    = link_to "#", class: "groupInfo__editBtn" do
       Edit
+
   .chat-main__messageList
     .messageList
       .messageList__name
