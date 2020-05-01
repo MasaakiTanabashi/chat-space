@@ -63,7 +63,7 @@
   height: 100vh;
   width: calc(100vw - 300px);
   float: right;
-  &__group-info{
+  &__groupInfo{
     height: 100px;
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
@@ -82,7 +82,7 @@
           color: #999999;
         }
     }
-    &__edit-btn{
+    &__editBtn{
       width: 72px;
       margin-top: 28px;
       margin-right: 40px;
@@ -95,12 +95,12 @@
       text-decoration: none;
     }
   }
-  &__message-list{
+  &__messageList{
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding-top: 35px;
     padding-left: 40px;
-    .message-list{
+    .messageList{
       display: flex;
       margin-bottom: 12px;
       &__name{
@@ -122,5 +122,42 @@
   &__message-form{
     height: 90px;
     background-color: #d2d2d2;
+    .form__contents{
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      .form__inputBox{
+        height: 50px;
+        width: 100%;
+        position: relative;
+        .form__inputText{
+          border: none;
+          height: 50px;
+          width: 100%;
+          padding: 0 45px 0 15px;
+        }
+        .message-image{
+          height: 50px;
+          position: absolute;
+          right: 10px;
+          .form__inputIcon{
+            font-size: 25px;
+            line-height: 50px;
+          }
+          #message-image{
+            display: none;
+          }
+        }
+      }
+      .form__submitBtn{
+        background-color: #38AEF0;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
   }
 }

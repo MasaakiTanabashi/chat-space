@@ -1,25 +1,32 @@
 .chat-main
-  .chat-main__group-info
-    .chat-main__group-info__name
+  .chat-main__groupInfo
+    .chat-main__groupInfo__name
       .name test
       .member Member : masa
-    = link_to "#", class: "chat-main__group-info__edit-btn" do
+    = link_to "#", class: "chat-main__groupInfo__editBtn" do
       Edit
-  .chat-main__message-list
-    .message-list
-      .message-list__name
+  .chat-main__messageList
+    .messageList
+      .messageList__name
         masa
-      .message-list__date
+      .messageList__date
         2020/04/30(Fri) 13:43:09
     .messages
       おはよう！
 
-    .message-list
-      .message-list__name
+    .messageList
+      .messageList__name
         masa
-      .message-list__date
+      .messageList__date
         2020/04/30(Fri) 14:24:12
     .messages
       今日は夜から雨
 
   .chat-main__message-form
+    %form.form__contents
+      .form__inputBox
+        %input.form__inputText{"placeholder": "type a message", "type": "text"}
+        %label.message-image
+          = icon('far', 'image',  class: "form__inputIcon")
+          %input{type: "file", "id": "message-image"}
+      %input.form__submitBtn{"name": "commit", "type": "submit", "value": "Send"}  
