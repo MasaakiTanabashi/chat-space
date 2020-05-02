@@ -1,0 +1,66 @@
+$aqua-blue:#38AEF0;
+$white:#ffffff;
+$black:#333333;
+$light-gray:#999999;
+
+.side-bar {
+  &__user-name{
+    background-color: #253141;
+  }
+    .top-items{
+      &__name{
+        color: $white;
+      }
+      &__Icon{
+        color: $white;
+      }
+    }
+  &__group-lists{
+    background-color: #2f3e51;
+  }
+    .group-list{
+      color: $white;
+    }
+}
+
+.chat-main{
+  .groupInfo{
+    background-color: $white;
+    border-bottom: solid 1px #eeeeee;
+      &__groupName{
+        color: $black;
+      }
+      &__memberList{
+        color: $light-gray;
+        &__member{
+        }
+      }
+    &__editBtn{
+      border: 1px solid $aqua-blue;
+      color:$aqua-blue;
+    }
+  }
+  &__messageList{
+    background-color: #fafafa;
+    .messageList{
+      &__name{
+        color: $black;
+      }
+      &__date{
+        color: $light-gray;
+      }
+    }
+    .messages{
+      color: #434a54;
+    }
+  }
+  &__message-form{
+    background-color: #d2d2d2;
+    .form__contents{
+      .form__submitBtn{
+        background-color:$aqua-blue;
+        color: $white;
+      }
+    }
+  }
+}

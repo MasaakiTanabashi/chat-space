@@ -1,0 +1,116 @@
+$form-height : 50px;
+
+.side-bar {
+  height: 100vh;
+  width: 300px;
+  &__user-name{
+    height: 100px;
+    padding: 0 20px;
+  }
+    .top-items{
+      height: 20px;
+      width: 260px;
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__iconList{
+        width: 60px;
+      }
+      &__Icon{
+        &--edit{
+          margin-right: 5px;
+        }
+      }
+    }
+  &__group-lists{
+    height: calc(100vh - 100px);
+  }
+    .group-list{
+      width: 260px;
+      margin: 0 20px;
+      font-weight: bold;
+      &__name{
+        font-size: 15px;
+        padding-top: 20px;
+        margin-bottom: 5px;
+      }
+      &__new-message{
+        font-size: 11px;
+        margin-bottom: 40px;
+      }
+    }
+}
+
+.chat-main{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  .groupInfo{
+    height: 100px;
+    padding: 0 40px;
+      &__groupName{
+        font-size: 20px;
+        margin-top: 35px;
+      }
+      &__memberList{
+        font-size: 12px;
+        margin-top: 15px;
+        &__member{
+          padding-right: 5px;
+        }
+      }
+    &__editBtn{
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+    }
+  }
+  &__messageList{
+    height: calc(100vh - 100px - 90px);
+    padding: 35px 40px 0;
+    .messageList{
+      margin-bottom: 12px;
+      &__name{
+        font-size: 16px;
+      }
+      &__date{
+        padding-left: 10px;
+        font-size: 12px;
+      }
+    }
+    .messages{
+      font-size: 14px;
+      margin-bottom: 46px;
+    }
+  }
+  &__message-form{
+    height: 90px;
+    .form__contents{
+      padding: 20px 40px;
+      .form__inputBox{
+        height: $form-height;
+        width: 100%;
+        .form__inputText{
+          height: $form-height;
+          width: 100%;
+          padding: 0 45px 0 15px;
+        }
+        .message-image{
+          height: $form-height;
+          right: 10px;
+          .form__inputIcon{
+            font-size: 25px;
+            line-height: $form-height;
+          }
+        }
+      }
+      .form__submitBtn{
+        height: $form-height;
+        margin-left: 15px;
+        padding: 0 30px;
+        font-size: 16px;
+      }
+    }
+  }
+}
