@@ -1,0 +1,35 @@
+.chat-main
+  .groupInfo
+    .groupInfo__group
+      .groupInfo__groupName test
+      %ul.groupInfo__memberList
+        Member ：
+        %li.groupInfo__member masa
+    = link_to "#", class: "groupInfo__editBtn" do
+      Edit
+
+  .chat-main__messageList
+    .messageList
+      .messageList__name
+        masa
+      .messageList__date
+        2020/04/30(Fri) 13:43:09
+    .messages
+      おはよう！
+
+    .messageList
+      .messageList__name
+        masa
+      .messageList__date
+        2020/04/30(Fri) 14:24:12
+    .messages
+      今日は夜から雨
+
+  .chat-main__message-form
+    %form.form__contents
+      .form__inputBox
+        %input.form__inputText{"placeholder": "type a message", "type": "text"}
+        %label.message-image
+          = icon('far', 'image',  class: "form__inputIcon")
+          %input{type: "file", "id": "message-image"}
+      %input.form__submitBtn{"name": "commit", "type": "submit", "value": "Send"}  
