@@ -41,10 +41,13 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     .group-list{
-      color: $white;
       width: 260px;
       margin: 0 20px;
       font-weight: bold;
+      &__link-style {
+        color: $white;
+        text-decoration: none;  
+      }
       &__name{
         font-size: 15px;
         padding-top: 20px;
