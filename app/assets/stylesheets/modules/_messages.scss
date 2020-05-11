@@ -30,7 +30,8 @@
         justify-content: flex-end;
       }
       &__Icon{
-        margin-right: 5px;
+        font-size: 16px;
+        margin-left: 5px;
         color: $white;
         text-decoration: none;
         display: inline;
@@ -106,6 +107,7 @@
       display: flex;
       &__name{
         font-size: 16px;
+        font-weight: bold;
         color: $black;
       }
       &__date{
@@ -145,7 +147,7 @@
             font-size: 25px;
             line-height: $form-height;
           }
-          #message-image{
+          .Hidden{
             display: none;
           }
         }

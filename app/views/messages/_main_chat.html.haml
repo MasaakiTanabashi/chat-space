@@ -1,35 +1,26 @@
 .chat-main
   .groupInfo
     .groupInfo__group
-      .groupInfo__groupName test
+      .groupInfo__groupName
+        =@group.name
       %ul.groupInfo__memberList
         Member ：
-        %li.groupInfo__member masa
-    = link_to "#", class: "groupInfo__editBtn" do
+        %li.groupInfo__member
+          - @group.group_users.each do | group_user |
+            = group_user.user.name
+    .groupInfo__edit
+    = link_to edit_group_path(@group), class: "groupInfo__editBtn" do
       Edit
 
   .chat-main__messageList
+    = render @messages
     .messageList
-      .messageList__name
-        masa
-      .messageList__date
-        2020/04/30(Fri) 13:43:09
-    .messages
-      おはよう！
-
-    .messageList
-      .messageList__name
-        masa
-      .messageList__date
-        2020/04/30(Fri) 14:24:12
-    .messages
-      今日は夜から雨
 
   .chat-main__message-form
-    %form.form__contents
+    = form_with model: [@group, @message], html: {class: "form__contents"}, local: true do |f|
       .form__inputBox
-        %input.form__inputText{"placeholder": "type a message", "type": "text"}
-        %label.message-image
-          = icon('far', 'image',  class: "form__inputIcon")
-          %input{type: "file", "id": "message-image"}
-      %input.form__submitBtn{"name": "commit", "type": "submit", "value": "Send"}  
+        = f.text_field :content, class: 'form__inputText', placeholder: 'type a message'
+        = f.label :image, class: 'message-image' do
+          = icon('far', 'image', class: 'form__inputIcon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'form__submitBtn'
