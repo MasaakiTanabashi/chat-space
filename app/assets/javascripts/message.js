@@ -1,6 +1,16 @@
 $(function(){
   $('.form__contents').on('submit',function(e){
-    e.preventDefault()
-    console.log("test")
+    e.preventDefault();
+    let formData = new FormData(this);
+    let url = $(this).attr('action');
+
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: "json",
+      processDate: false,
+      contentType: false
+    })
   })
 })
