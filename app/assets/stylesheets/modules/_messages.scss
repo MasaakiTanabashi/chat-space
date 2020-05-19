@@ -102,6 +102,7 @@
     height: calc(100vh - 100px - 90px);
     padding: 35px 40px 0;
     background-color: #fafafa;
+    overflow: scroll;
     .messageList{
       margin-bottom: 12px;
       display: flex;
