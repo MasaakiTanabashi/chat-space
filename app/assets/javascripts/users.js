@@ -10,6 +10,15 @@ $(function(){
     result.append(html);
   }
 
+  function addUser(id, name) {
+    let html = `<div class="ChatMember">
+                  <p class="ChatMember__name">${name}</p>
+                  <input name="group[user_ids][]" type="hidden" value="${id}" />
+                  <div class="ChatMember__remove ChatMember__button">削除</div>
+                </div>`;
+    $('.ChatMembers').append(html);
+  }
+
   function findNoUser() {
     let html = `<div class="ChatMember clearfix">
                   <p class="ChatMember__name">ユーザーが見つかりません</p>
@@ -42,5 +51,16 @@ $(function(){
     .fail(function(){
       alert('通信エラーです。ユーザーが表示できません。')
     })
+  })
+
+  result.on("click", '.ChatMember__add', function(){
+    const userId = $(this).attr('data-user-id');
+    const userName = $(this).attr('data-user-name');
+    $(this).parent().remove();
+    addUser(userId, userName);
+  })
+
+  $('.ChatMembers').on("click", '.ChatMember__remove', function(){
+    $(this).parent().remove();
   })
 })
