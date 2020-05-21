@@ -1,7 +1,8 @@
 $(function(){
+  
   function buildHTML(message){
     let img = message.image ? `<img src="${message.image}">`:"";
-    let html =　`<div class="MessageBox">
+    let html =　`<div class="MessageBox" data-message-id=${message.id}>
                   <div class="messageList">
                     <div class="messageList__name">
                       ${message.user_name}
@@ -45,5 +46,5 @@ $(function(){
       $('.form__contents')[0].reset();
       $('.form__submitBtn').prop('disabled', false);
     })
-  })
-})
+  });
+});
