@@ -3,13 +3,20 @@ $(function(){
   let result = $('#UserSearchResult')
 
   function findUser(user) {
-    let html = `<div class="ChatMember clearfix">
+    let html = `<div class="ChatMember">
                   <p class="ChatMember__name">${user.name}</p>
                   <div class="ChatMember__add ChatMember__button" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                 </div>`;
     result.append(html);
   }
 
+  function findNoUser() {
+    let html = `<div class="ChatMember">
+                  <p class="ChatMember__name">ユーザーが見つかりません</p>
+                </div>`;
+    result.append(html);
+  }
+  
   function addUser(id, name) {
     let html = `<div class="ChatMember">
                   <p class="ChatMember__name">${name}</p>
@@ -17,13 +24,6 @@ $(function(){
                   <div class="ChatMember__remove ChatMember__button">削除</div>
                 </div>`;
     $('.ChatMembers').append(html);
-  }
-
-  function findNoUser() {
-    let html = `<div class="ChatMember clearfix">
-                  <p class="ChatMember__name">ユーザーが見つかりません</p>
-                </div>`;
-    result.append(html);
   }
 
   $('#UserSearch__field').on("keyup",function(){
@@ -41,7 +41,7 @@ $(function(){
             findUser(user);
           });
         }
-        else if (users.length == 0 ) {
+        else if (input.length == 0 ) {
           return false;
         }
         else {
