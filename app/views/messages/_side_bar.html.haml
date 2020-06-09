@@ -2,7 +2,7 @@
   .side-bar__user-name
     .top-items
       .top-items__name
-        =current_user.name
+        = current_user.name
       %ul.top-items__iconList
         %li.top-items__Icon
           = link_to new_group_path(), class: "top-items__Icon top-items__Icon--edit" do

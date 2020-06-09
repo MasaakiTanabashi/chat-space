@@ -2,7 +2,7 @@ $(function(){
   
   function buildHTML(message){
     let img = message.image ? `<img src="${message.image}">`:"";
-    let html =　`<div class="MessageBox" data-message-id=${message.id}>
+    let html = `<div class="MessageBox" data-message-id=${message.id}>
                   <div class="messageList">
                     <div class="messageList__name">
                       ${message.user_name}
